@@ -1,14 +1,14 @@
 from itertools import permutations
 import math
 
-# make the sister lists [1, -1, 2, -2, ... , n, -n] 
+# make the sister list [1, -1, 2, -2, ... , n, -n] 
 def make_sibling_lists(n):
     for i in range(0, 2 * n, 2): 
         sisters_list[i] = math.ceil((i + 1)/2)
     for i in range(1, 2 * n, 2): 
         sisters_list[i] = -(math.ceil((i + 1)/2))
 
-# returns the number of valid permutations
+# prints valid perms and returns the number of valid permutations
 def find_valid_perms():
     
     # set count of valid permutations to 0
@@ -16,7 +16,7 @@ def find_valid_perms():
    
     # generates permutations for sisters_list
     perms = permutations(sisters_list)
-    # for each perm in perms, add 1 to count if the perm is valid 
+    # for each perm in perms, add 1 to count and print perm if the perm is valid 
     for perm in perms:
         # set is_valid to True, which assumes from the beginning that every perm is valid
         is_valid = True
@@ -26,9 +26,10 @@ def find_valid_perms():
             if (perm[i] == -(perm[i+1])):
                 is_valid = False
         
-        # the permutation is still valid, then add one to the count
+        # the permutation is still valid, then add one to the count and print the permutation
         if (is_valid):
             count += 1
+            print(perm)
     
     # return count at the end with the total valid number of permutations for n pairs
     return count
