@@ -1,12 +1,8 @@
 from itertools import permutations
 import math
 
-# make the brother and sister lists [1, -1, 2, -2, ... , n, -n] 
+# make the sister lists [1, -1, 2, -2, ... , n, -n] 
 def make_sibling_lists(n):
-    for i in range(0, 2 * n, 2): 
-        brothers_list[i] = math.ceil((i + 1)/2)
-    for i in range(1, 2 * n, 2): 
-        brothers_list[i] = -(math.ceil((i + 1)/2))
     for i in range(0, 2 * n, 2): 
         sisters_list[i] = math.ceil((i + 1)/2)
     for i in range(1, 2 * n, 2): 
@@ -41,11 +37,10 @@ def find_valid_perms():
 # set n to input value of the number of pairs 
 n = int (input ("How many pairs? "))
 
-# set brothers_list and sisters_list as lists of 0s of size 2n
-brothers_list = [0] * 2 * n
+# set sisters_list as list of 0s of size 2n
 sisters_list = [0] * 2 * n
 
-# make the brother and sister lists 
+# make the sister lists 
 make_sibling_lists(n)
 
 # print the number of valid date permutations 
