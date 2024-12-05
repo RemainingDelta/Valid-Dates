@@ -22,5 +22,4 @@ def t(n, permutations):
     return permutations
 
 n = int(input("How many pairs? "))
-#print (r(n))
 print(t(n,0))
