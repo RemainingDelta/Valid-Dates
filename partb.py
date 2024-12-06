@@ -32,9 +32,17 @@ def t(n):
     # return permutations value
     return permutations
 
-# set n to input value of the number of pairs 
-n = int(input("How many pairs? "))
+# make t(n) list and prints for n values of 1-10 
+def make_t_list():
+    # T(n) list set to [0] 
+    valid_pairs = [0]
 
-# print R(n) and T(n)
-print("R(n):", r(n))
-print("T(n):", t(n))
+    # for n: [1-10], find t(n) and add it to valid_pairs list
+    for n in range(11):
+        valid_pairs.append(t(n))
+
+    # print valid_pairs
+    print("T(n):", valid_pairs)
+    
+
+make_t_list()
