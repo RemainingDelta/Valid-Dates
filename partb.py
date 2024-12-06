@@ -34,8 +34,8 @@ def t(n):
 
 # make t(n) list and prints for n values of 1-10 
 def make_t_list():
-    # T(n) list set to [0] 
-    valid_pairs = [0]
+    # T(n) list set to [] 
+    valid_pairs = []
 
     # for n: [1-10], find t(n) and add it to valid_pairs list
     for n in range(11):
